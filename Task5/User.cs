@@ -8,12 +8,12 @@
 		public string LastName { get; init; }
 		public string MiddleName { get; init; }
 		public string Phone { get; init; }
-		public int PassportData { get; init; }
+		public string PassportData { get; init; }
 		public DateTime RegistrationDate { get; init; }
 		public string Login { get; init; }
 		public string Password { get; init; }
 
-		public User(string firstName, string lastName, string middleName, string phone, int passportData, string login, string password )
+		public User(string firstName, string lastName, string middleName, string phone, string passportData, string login, string password )
 		{
 			FirstName = firstName;
 			LastName = lastName;

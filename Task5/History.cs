@@ -8,5 +8,12 @@
 		public OperationTypes OperationType { get; init; }
 		public int Sum { get; init; }
 		public int AccountId { get; init; }
+
+		public History(OperationTypes operationType, int sum, int accountId)
+		{
+			OperationType = operationType;
+			Sum = sum;
+			AccountId = accountId;
+		}
 	}
 }
