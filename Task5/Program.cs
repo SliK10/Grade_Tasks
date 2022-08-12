@@ -1,13 +1,41 @@
 ﻿using Task5;
 
-Console.WriteLine("Для получения доступа к счёту введите логин и пароль!");
-Console.Write("Логин: ");
-string? login = Console.ReadLine();
-Console.Write("Пароль: ");
-string? password = Console.ReadLine();
+Console.Write("1 - Вывод информации о заданном аккаунте по логину и паролю\n" +
+	"2 - Вывод данных о всех счетах заданного пользователя\n" +
+	"3 - Вывод данных о всех счетах заданного пользователя, включая историю по каждому счёту\n" +
+	"4 - Вывод данных о всех операциях пополенения счёта с указанием владельца каждого счёта\n" +
+	"5 - Вывод данных о всех пользователях у которых на счёте сумма больше N (N задаётся из вне и может быть любой\n" +
+	"Выберите действие: ");
 
-User? currentUser = Db.users.Find(x => x.Login == login && x.Password == password);
-if (currentUser != null)
+string choice = Console.ReadLine();
+
+switch (choice)
 {
-	Console.WriteLine($"Здравствуйте: {currentUser.FirstName} {currentUser.LastName}");
+	case "1":
+		PrintAccountInfo();
+		break;
+	case "2":
+
+		break;
+	case "3":
+
+		break;
+	case "4":
+
+		break;
+	case "5":
+
+		break;
+	default:
+		break;
+}
+
+void PrintAccountInfo()
+{
+	Console.Write("Логин: ");
+	string login = Console.ReadLine();
+	Console.Write("Пароль: ");
+	string password = Console.ReadLine();
+
+	var user = Db.users.Where(u => u.Login == login && u.Password == password);
 }
