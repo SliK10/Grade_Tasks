@@ -37,5 +37,22 @@ void PrintAccountInfo()
 	Console.Write("Пароль: ");
 	string password = Console.ReadLine();
 
-	var user = Db.users.Where(u => u.Login == login && u.Password == password);
+	var user = Db.users.Where(u => u.Login == login && u.Password == password).First();
+
+	if (user != null)
+	{
+		Console.WriteLine($"\nId: {user.Id}\n" +
+		$"Имя: {user.FirstName}\n" +
+		$"Фамилия: {user.LastName}\n" +
+		$"Отчество: {user.MiddleName}\n" +
+		$"Телефон: {user.Phone}\n" +
+		$"Данные паспорта: {user.PassportData}\n" +
+		$"Дата регистрации: {user.RegistrationDate}\n" +
+		$"Логин: {user.Login}\n" +
+		$"Пароль: {user.Password}\n");
+	}
+	else
+	{
+		Console.WriteLine("Нет аккаунта с таким логином или паролем");
+	}
 }

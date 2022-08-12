@@ -3,7 +3,7 @@
 	internal class Account
 	{
 		private static int nextId = 0;
-		public int Id { get; init; } = nextId++;
+		public int Id { get; init; } = ++nextId;
 		public DateTime OpeningDate { get; init; } = DateTime.Now;
 		public int Sum { get; set; }
 		public int UserId { get; init; }
